@@ -50,4 +50,4 @@ MIT — úsalo, aprende de él, adáptalo a tu caso. Se agradece una mención, p
 
 ---
 
-**[Tu nombre]** · [LinkedIn] · [community.fabric.microsoft.com — perfil si aplica]
+**Gabriel Concepción** · [LinkedIn](https://www.linkedin.com/in/gabriel-concepci%C3%B3n/)
