@@ -1,53 +1,53 @@
 # Payment Management Tracking & Optimization Dashboard 💳📊
 
-Dashboard construido en Microsoft Fabric / Power BI para dar seguimiento y optimización al ciclo de pagos, con alertas automáticas y filtrado multidimensional — pensado para que múltiples áreas tengan visibilidad sin necesidad de licencias SAP adicionales.
+Dashboard built in Microsoft Fabric / Power BI to track and optimize the payment cycle, with automatic alerts and multidimensional filtering — designed so multiple areas get visibility without needing additional SAP licenses.
 
 ![Demo](docs/media/demo.gif)
 
-## 🧩 Qué resuelve
+## 🧩 What it solves
 
-- Seguimiento y optimización del ciclo de pagos en tiempo real
-- Alertas automáticas sobre pedidos y ejecución
-- Filtrado multidimensional por ID ERC, proveedor y coordinación
-- Desglose por área organizacional
-- Acceso para múltiples usuarios sin licencias SAP adicionales
+- Real-time payment cycle tracking and optimization
+- Automatic alerts on orders and execution
+- Multidimensional filtering by ERC ID, vendor, and coordination
+- Breakdown by organizational area
+- Access for multiple users without additional SAP licenses
 
-## 🖥️ Pestañas del tablero
+## 🖥️ Dashboard tabs
 
-| Pestaña | Qué muestra |
+| Tab | What it shows |
 |---|---|
-| **Portada** | Landing page con navegación y resumen |
-| **Pedidos Pendientes** | ![Pedidos Pendientes](docs/screenshots/pedidos-pendientes.png) |
-| **% Ejecutado por pedido** | ![% Ejecutado](docs/screenshots/pct-ejecutado.png) |
-| **Entrega Vencida** | ![Entrega Vencida](docs/screenshots/entrega-vencida.png) |
+| **Cover** | Landing page with navigation and summary |
+| **Pending Orders** | ![Pending Orders](docs/screenshots/pedidos-pendientes.png) |
+| **% Executed by order** | ![% Executed](docs/screenshots/pct-ejecutado.png) |
+| **Overdue Delivery** | ![Overdue Delivery](docs/screenshots/entrega-vencida.png) |
 
-## 🎥 Demo completa
+## 🎥 Full demo
 
 https://www.linkedin.com/feed/update/urn:li:activity:7492639934512713728/
 
-## 🗂️ Qué hay adentro
+## 🗂️ What's inside
 
-| Carpeta / archivo | Contenido |
+| Folder / file | Content |
 |---|---|
-| `docs/screenshots/` | Capturas de la portada y cada pestaña |
-| `docs/media/` | GIF de demo |
-| `dax/` | Las 20 medidas DAX del modelo, anonimizadas (nombres de tabla/columna genéricos, sin la marca interna) — ver `dax/README.md` |
+| `docs/screenshots/` | Cover and tab screenshots |
+| `docs/media/` | Demo GIF |
+| `dax/` | The model's 20 DAX measures, anonymized (generic table/column names, internal branding removed) — see `dax/README.md` |
 
 ## 🛠️ Stack
 
 - Microsoft Fabric
 - Power BI Desktop / Service
 - DAX / Power Query
-- *(v2 en desarrollo)* Integración directa con SAP · cambio de idioma · cambio de tema
+- *(v2 in development)* Direct SAP integration · language switching · theme switching
 
-## 🔒 Nota sobre los datos
+## 🔒 Note on the data
 
-Los proveedores, IDs ERC, números de orden y nombres de tabla/columna en este repo son ficticios o genéricos — se generaron como parte de un proceso de anonimización antes de la publicación pública. No corresponden a datos ni estructura real de ninguna organización.
+Vendors, ERC IDs, order numbers, and table/column names in this repo are fictitious or generic — generated as part of an anonymization process before public release. They do not correspond to real data or the actual structure of any organization.
 
-## 📄 Licencia
+## 📄 License
 
-MIT — úsalo, aprende de él, adáptalo a tu caso. Se agradece una mención, pero no es obligatorio.
+MIT — use it, learn from it, adapt it to your case. A mention is appreciated but not required.
 
 ---
 
-**Gabriel Concepción** · (https://www.linkedin.com/in/gabriel-concepci%C3%B3n/)
+**Gabriel Concepción** · [LinkedIn](https://www.linkedin.com/in/gabriel-concepci%C3%B3n/)
