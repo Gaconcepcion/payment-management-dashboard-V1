@@ -23,7 +23,7 @@ Dashboard construido en Microsoft Fabric / Power BI para dar seguimiento y optim
 
 ## 🎥 Demo completa
 
-[Link al video en LinkedIn / YouTube]
+https://www.linkedin.com/feed/update/urn:li:activity:7492639934512713728/
 
 ## 🗂️ Qué hay adentro
 
@@ -50,4 +50,4 @@ MIT — úsalo, aprende de él, adáptalo a tu caso. Se agradece una mención, p
 
 ---
 
-**Gabriel Concepción** · [LinkedIn](https://www.linkedin.com/in/gabriel-concepci%C3%B3n/)
+**Gabriel Concepción** · (https://www.linkedin.com/in/gabriel-concepci%C3%B3n/)
