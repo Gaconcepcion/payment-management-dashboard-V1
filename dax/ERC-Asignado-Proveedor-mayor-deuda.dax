@@ -1,0 +1,36 @@
+
+VAR ProveedorConMayorDeuda =
+    MAXX(
+        TOPN(
+            1,
+            SUMMARIZE(
+                'Purchase Order Positions',
+                'Purchase Order Positions'[VendorName],
+                "TotalDeuda", SUM('Purchase Order Positions'[PendingValueUSD])
+            ),
+            [TotalDeuda], DESC
+        ),
+        'Purchase Order Positions'[VendorName]
+    )
+
+VAR SolicitanteMasFrecuente =
+    MAXX(
+        TOPN(
+            1,
+            SUMMARIZE(
+                FILTER(
+                    'Procurement Tracking',
+                    'Procurement Tracking'[VendorName] = ProveedorConMayorDeuda
+                ),
+                'Procurement Tracking'[Requester],
+                "ConteoPedidos", COUNTROWS(
+                    'Procurement Tracking'
+                )
+            ),
+            [ConteoPedidos], DESC
+        ),
+        'Procurement Tracking'[Requester]
+    )
+
+RETURN
+    SolicitanteMasFrecuente

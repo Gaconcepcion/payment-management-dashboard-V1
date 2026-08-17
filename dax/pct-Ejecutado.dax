@@ -1,0 +1,1 @@
+SUM('Purchase Documents For Allocation'[ExecutedUSD])/SUM('Purchase Documents For Allocation'[TotalPositionUSD])

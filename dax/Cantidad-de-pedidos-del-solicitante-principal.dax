@@ -1,0 +1,11 @@
+
+VAR ResumenPorSolicitante =
+    SUMMARIZE(
+        'Procurement Tracking',
+        'Procurement Tracking'[Requester],
+        "ConteoPedidos", COUNTROWS('Purchase Order Positions')
+    )
+VAR TopSolicitante =
+    TOPN(1, ResumenPorSolicitante, [ConteoPedidos], DESC)
+RETURN
+    MAXX(TopSolicitante, [ConteoPedidos])

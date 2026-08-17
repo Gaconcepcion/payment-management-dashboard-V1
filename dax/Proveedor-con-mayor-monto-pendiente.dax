@@ -1,0 +1,13 @@
+
+VAR ProveedorConMontoMaximo =
+    TOPN(
+        1,
+        SUMMARIZE(
+            'Procurement Tracking',
+            'Procurement Tracking'[VendorName],
+            "Monto_Pendiente", SUM('Purchase Order Positions'[PendingValueUSD])
+        ),
+        [Monto_Pendiente], DESC
+    )
+RETURN
+    MAXX(ProveedorConMontoMaximo, 'Procurement Tracking'[VendorName])

@@ -1,0 +1,4 @@
+
+COALESCE(
+DISTINCTCOUNT( 'Purchase Order Positions'[OrderID] )
+,0)

@@ -1,0 +1,5 @@
+
+VAR UPN = USERPRINCIPALNAME()
+VAR AtPosition = FIND("@", UPN, 1, 0) // Encuentra la posición de "@"
+RETURN
+IF(AtPosition > 0, LEFT(UPN, AtPosition - 1), UPN)

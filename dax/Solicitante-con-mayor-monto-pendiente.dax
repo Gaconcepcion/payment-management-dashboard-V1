@@ -1,0 +1,11 @@
+
+VAR TablaResumen =
+    SUMMARIZE(
+        'Procurement Tracking',
+        'Procurement Tracking'[Requester],
+        "Monto_Total_Pendiente", CALCULATE(SUM('Purchase Order Positions'[PendingValueUSD]))
+    )
+VAR SolicitanteConMontoMaximo =
+    TOPN(1, TablaResumen, [Monto_Total_Pendiente], DESC)
+RETURN
+    MAXX(SolicitanteConMontoMaximo, [Requester])

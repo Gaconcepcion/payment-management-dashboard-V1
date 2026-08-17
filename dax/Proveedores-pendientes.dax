@@ -1,0 +1,7 @@
+COALESCE(
+    CALCULATE(
+        DISTINCTCOUNT('Purchase Order Positions'[VendorID]),
+        'Purchase Order Positions'[PendingValueUSD] > 0
+    ),
+    0
+)

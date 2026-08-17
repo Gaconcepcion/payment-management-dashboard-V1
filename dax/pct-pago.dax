@@ -1,0 +1,1 @@
+SUM('Material Documents'[EntryAmount])/SUM('FilteredRequests'[NetDistributedValue])

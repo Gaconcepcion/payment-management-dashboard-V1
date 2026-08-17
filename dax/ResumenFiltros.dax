@@ -1,0 +1,80 @@
+
+VAR FiltroFecha =
+    IF(
+        ISFILTERED('Purchase Order Positions'[NextDeliveryDate]), // Verifica si el filtro 'Fecha de entrega' está activo
+        IF(
+            HASONEVALUE('Purchase Order Positions'[NextDeliveryDate]), // Si solo hay un valor seleccionado
+            "Fecha: " & FORMAT(VALUES('Purchase Order Positions'[NextDeliveryDate]), "dd/mm/yyyy"), // Formatear la fecha
+            "Fecha: Activo" // Si hay múltiples valores seleccionados
+        ),
+        BLANK() // Si no hay filtro aplicado
+    )
+
+VAR FiltroGasto =
+    IF(
+        ISFILTERED('Purchase Order Positions'[ExpenseType]), // Verifica si el filtro 'Tipo de Gasto/Inversión' está activo
+        IF(
+            HASONEVALUE('Purchase Order Positions'[ExpenseType]), // Si solo hay un valor seleccionado
+            "Gasto: " & VALUES('Purchase Order Positions'[ExpenseType]),
+            "Gasto: Varios" // Si hay múltiples valores seleccionados
+        ),
+        BLANK() // Si no hay filtro aplicado
+    )
+
+VAR BuscadorNombreProveedor =
+    IF(
+        ISFILTERED('Purchase Order Positions'[VendorID]), 
+        IF(
+            HASONEVALUE('Purchase Order Positions'[VendorID]),
+            "Proveedor: " & VALUES('Purchase Order Positions'[VendorID]),
+            "Proveedor: Varios"
+        ),
+        BLANK()
+    )
+
+VAR BuscadorERC =
+    IF(
+        ISFILTERED('Procurement Tracking'[Requester]), 
+        IF(
+            HASONEVALUE('Purchase Order Positions'[VendorID]),
+            "ERC: " & VALUES('Purchase Order Positions'[VendorID]),
+            "Filtro ERC Activo"
+        ),
+        BLANK()
+    )
+
+// Puedes agregar más variables de filtro aquí si las necesitas, siguiendo el mismo patrón
+/*
+VAR FiltroOtroCampo =
+    IF(
+        ISFILTERED('NombreDeTuTabla'[NombreDeTuColumna]), 
+        IF(
+            HASONEVALUE('NombreDeTuTabla'[NombreDeTuColumna]),
+            "Nombre Filtro: " & VALUES('NombreDeTuTabla'[NombreDeTuColumna]),
+            "Nombre Filtro: Varios"
+        ),
+        BLANK()
+    )
+*/
+
+VAR ListaDeFiltros = 
+    CONCATENATEX(
+        {
+            FiltroFecha,
+            FiltroGasto,
+            BuscadorNombreProveedor,
+            BuscadorERC
+            // Agrega aquí las otras variables de filtro que hayas creado
+        },
+        [Value], // [Value] hace referencia al valor de cada variable en la lista
+        " | ", // Separador entre los filtros
+        BLANK(), // Orden de la concatenación, BLANK() para mantener el orden de la lista
+        0 // No limitar el número de filas para la concatenación
+    )
+
+RETURN
+    IF(
+        LEN(ListaDeFiltros) > 0, // Si hay algún filtro aplicado (la cadena no está vacía)
+        "Filtros aplicados >> " & ListaDeFiltros,
+        "Ningún filtro aplicado"
+    )
